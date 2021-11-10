@@ -1,0 +1,60 @@
+body {
+    background-color: black;
+}
+
+#result-box {
+    width: 50%;
+    background-color: chartreuse;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    
+}
+#punch-in {
+    width: 25%;
+    height: 25%;
+    background-color: chartreuse;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    
+}
+#red-box {
+    width: 80%;
+    background-color: red;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    
+}
+#yellow-box {
+    width: 80%;
+    background-color: yellow;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    
+}
+#blue-box {
+    width: 80%;
+    background-color: blue;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    
+}
