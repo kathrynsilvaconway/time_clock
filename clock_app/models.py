@@ -56,3 +56,9 @@ class User(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True )
     objects = UserManager()
+
+class Punch (models.Model):
+    user = models.ForeignKey(User, related_name='punches', on_delete=models.CASCADE)
+    in_or_out = models.CharField(max_length=3)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

@@ -6,12 +6,15 @@ import bcrypt
 def index(request):
     return render(request, 'index.html')
 
+def render_register(request):
+    return render(request, 'register.html')
+
 def process_reg(request):
     errors = User.objects.reg_validator(request.POST)
     if len(errors) > 0:
         for key, value in errors.items():
             messages.error(request, value)
-        return redirect('/')
+        return redirect('/register')
     else:
         password = request.POST['password']
         pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
@@ -21,7 +24,7 @@ def process_reg(request):
             email = request.POST['email'],
             password = pw_hash)
         request.session['id'] = this_user.id
-        return redirect('/display_home')
+        return redirect('/home')
 
 def process_login(request):
     if request.method == "POST":
@@ -33,10 +36,10 @@ def process_login(request):
         one_user = User.objects.filter(email = request.POST['email'])
         request.session['id'] = one_user[0].id
         request.session['first_name'] = one_user[0].first_name
-        return redirect('/display_home')
+        return redirect('/home')
     return redirect('/')
 
-def display_home(request):
+def render_home(request):
     context = {
         'user': User.objects.get(id=request.session['id']),
     
